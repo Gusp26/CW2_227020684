@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
     private fun getCancellationSignal() : CancellationSignal {
         cancellationSignal = CancellationSignal()
         cancellationSignal?.setOnCancelListener {
-            notifyUser("Authentication was cancelled by the user")
+            notifyUser("Authentication was cancelled")
         }
         return cancellationSignal as CancellationSignal
     }
