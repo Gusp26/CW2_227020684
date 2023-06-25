@@ -25,13 +25,55 @@ class ToolActivity : AppCompatActivity() {
 
         imageList = arrayOf(
             R.drawable.bigscissor,
-            R.drawable.smallscissor)
+            R.drawable.smallscissor,
+            R.drawable.brush,
+            R.drawable.oilbrush,
+            R.drawable.clamp,
+            R.drawable.hatchet,
+            R.drawable.sawblade,
+            R.drawable.stapler,
+            R.drawable.bamboostick,
+            R.drawable.glue,
+            R.drawable.fountainpen,
+            R.drawable.ironwire,
+            R.drawable.paper,
+            R.drawable.fluorescentoil,
+            R.drawable.magneticoil,
+            R.drawable.bamboo)
         titleList = arrayOf(
             "Scissor",
-            "Scissor")
+            "Scissor",
+            "Brush",
+            "Oil Brush",
+            "Clamp",
+            "Hatchet",
+            "Saw Blade,",
+            "Stapler",
+            "Bamboo Stick",
+            "Glue",
+            "Fountain Pen",
+            "Ironwire",
+            "Paper",
+            "Fluorescent Oil",
+            "M agnetic Oil",
+            "Bamboo")
         detailImageList = arrayOf(
             R.drawable.bigscissor,
-            R.drawable.smallscissor)
+            R.drawable.smallscissor,
+            R.drawable.brush,
+            R.drawable.oilbrush,
+            R.drawable.clamp,
+            R.drawable.hatchet,
+            R.drawable.sawblade,
+            R.drawable.stapler,
+            R.drawable.bamboostick,
+            R.drawable.glue,
+            R.drawable.fountainpen,
+            R.drawable.ironwire,
+            R.drawable.paper,
+            R.drawable.fluorescentoil,
+            R.drawable.magneticoil,
+            R.drawable.bamboo)
 
         recyclerView = findViewById(R.id.recyclerView)
         searchView = findViewById(R.id.search)
