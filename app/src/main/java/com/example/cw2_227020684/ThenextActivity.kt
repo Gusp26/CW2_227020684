@@ -20,4 +20,5 @@ class ThenextActivity : AppCompatActivity() {
     private fun callActivity() {
         startActivity(Intent(this,ToolActivity::class.java))
     }
+
 }
