@@ -49,6 +49,15 @@ class HomeFragment : Fragment() {
             add_Data()
         }
 
+        binding.btnShow.setOnClickListener(){
+            val fragment = ListFragment()
+            val fragmentManager = activity?.supportFragmentManager
+            val fragmentTransition = fragmentManager!!.beginTransaction()
+            fragmentTransition.replace(R.id.frameLayout,fragment)
+                .addToBackStack(HomeFragment().toString())
+                .commit()
+        }
+
         return root
     }
 
@@ -58,32 +67,68 @@ class HomeFragment : Fragment() {
 
         if (picName.isEmpty()){
             Toast.makeText(context,"Name is empty",Toast.LENGTH_SHORT).show()
-        }
 
-        if (picDesc.isEmpty()){
-            Toast.makeText(context,"Descrption is empty",Toast.LENGTH_SHORT).show()
-        }
+            if (picDesc.isEmpty()){
+                Toast.makeText(context,"Description is empty",Toast.LENGTH_SHORT).show()
 
-        if (sImage.equals("")){
-            Toast.makeText(context,"Image is empty or incorrect format",Toast.LENGTH_SHORT).show()
-        }
-        else{
-            db = FirebaseDatabase.getInstance().getReference("Culture")
-            val culture = CultureDataClass(picName,picDesc,sImage)
-            val databaseReference = FirebaseDatabase.getInstance().reference
-            val id = databaseReference.push().key
-            db.child(id.toString()).setValue(culture).addOnSuccessListener {
-                binding.etName.text.clear()
-                binding.etDesc.text.clear()
-                sImage = ""
-                binding.imageView.setImageBitmap(null)
-                Toast.makeText(context,"Upload Successful",Toast.LENGTH_SHORT).show()
-
-            }.addOnFailureListener{
-                Toast.makeText(context,"Data insert failed",Toast.LENGTH_SHORT).show()
+                if (sImage.equals("")){
+                    Toast.makeText(context,"Image is empty or incorrect format",Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    insert_Data()
+                }
             }
+
+        }else{
+            if (picDesc.isEmpty()){
+                Toast.makeText(context,"Description is empty",Toast.LENGTH_SHORT).show()
+
+                if (sImage.equals("")){
+                    Toast.makeText(context,"Image is empty or incorrect format",Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    if (picDesc.isEmpty()) {
+                        Toast.makeText(context, "Description is empty", Toast.LENGTH_SHORT).show()
+
+                    }else{
+                        insert_Data()
+                    }
+
+                }
+
+            }else{
+                if (sImage.equals("")){
+                    Toast.makeText(context,"Image is empty or incorrect format",Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    insert_Data()
+                }
+
+            }
+
         }
 
+
+    }
+    private fun insert_Data() {
+
+        val picName = binding.etName.text.toString()
+        val picDesc = binding.etDesc.text.toString()
+
+        db = FirebaseDatabase.getInstance().getReference("Culture")
+        val culture = CultureDataClass(picName,picDesc,sImage)
+        val databaseReference = FirebaseDatabase.getInstance().reference
+        val id = databaseReference.push().key
+        db.child(id.toString()).setValue(culture).addOnSuccessListener {
+            binding.etName.text.clear()
+            binding.etDesc.text.clear()
+            sImage = ""
+            binding.imageView.setImageBitmap(null)
+            Toast.makeText(context,"Upload Successful",Toast.LENGTH_SHORT).show()
+
+        }.addOnFailureListener{
+            Toast.makeText(context,"Data insert failed",Toast.LENGTH_SHORT).show()
+        }
     }
 
     private val ActivityResultLauncher = registerForActivityResult<Intent,ActivityResult>(

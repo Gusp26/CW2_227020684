@@ -15,7 +15,8 @@ class CultureActivity : AppCompatActivity() {
         val fragment = HomeFragment()
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frameLayout,fragment).commit()
+        fragmentTransaction.replace(R.id.frameLayout,fragment)
+            .commit()
 
     }
 
