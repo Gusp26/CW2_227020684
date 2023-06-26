@@ -12,6 +12,11 @@ class CultureActivity : AppCompatActivity() {
         binding = ActivityCultureBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val fragment = HomeFragment()
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.frameLayout,fragment).commit()
+
     }
 
 }
