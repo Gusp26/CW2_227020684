@@ -15,10 +15,20 @@ class ThenextActivity : AppCompatActivity() {
         toolpage.setOnClickListener{
             callActivity()
         }
+
+        val culturepage = findViewById<Button>(R.id.test2)
+
+        culturepage.setOnClickListener{
+            callActivity2()
+        }
     }
 
     private fun callActivity() {
         startActivity(Intent(this,ToolActivity::class.java))
     }
+    private fun callActivity2() {
+        startActivity(Intent(this,CultureActivity::class.java))
+    }
+
 
 }

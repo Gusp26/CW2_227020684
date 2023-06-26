@@ -47,7 +47,7 @@ class ToolActivity : AppCompatActivity() {
             "Oil Brush",
             "Clamp",
             "Hatchet",
-            "Saw Blade,",
+            "Saw Blade",
             "Stapler",
             "Bamboo Stick",
             "Glue",
