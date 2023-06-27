@@ -48,7 +48,7 @@ class ThenextActivity : AppCompatActivity() {
     }
 
     private fun callActivity4() {
-
+        startActivity(Intent(this,MpActivity::class.java))
     }
 
 
