@@ -35,6 +35,12 @@ class ThenextActivity : AppCompatActivity() {
         mappage.setOnClickListener{
             callActivity4()
         }
+
+        val dpage = findViewById<Button>(R.id.test5)
+
+        dpage.setOnClickListener{
+            callActivity5()
+        }
     }
     private fun callActivity() {
         startActivity(Intent(this,ToolActivity::class.java))
@@ -49,6 +55,10 @@ class ThenextActivity : AppCompatActivity() {
 
     private fun callActivity4() {
         startActivity(Intent(this,MpActivity::class.java))
+    }
+
+    private fun callActivity5() {
+        startActivity(Intent(this,CameraActivity::class.java))
     }
 
 
