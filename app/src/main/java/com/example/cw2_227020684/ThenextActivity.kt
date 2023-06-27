@@ -29,6 +29,12 @@ class ThenextActivity : AppCompatActivity() {
             FirebaseAuth.getInstance().signOut()
             callActivity3()
         }
+
+        val mappage = findViewById<Button>(R.id.test4)
+
+        mappage.setOnClickListener{
+            callActivity4()
+        }
     }
     private fun callActivity() {
         startActivity(Intent(this,ToolActivity::class.java))
@@ -39,6 +45,10 @@ class ThenextActivity : AppCompatActivity() {
 
     private fun callActivity3() {
         startActivity(Intent(this,MainActivity::class.java))
+    }
+
+    private fun callActivity4() {
+
     }
 
 
