@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.google.firebase.auth.FirebaseAuth
 
 class ThenextActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,13 +22,23 @@ class ThenextActivity : AppCompatActivity() {
         culturepage.setOnClickListener{
             callActivity2()
         }
-    }
 
+        val mainpage = findViewById<Button>(R.id.test3)
+
+        mainpage.setOnClickListener{
+            FirebaseAuth.getInstance().signOut()
+            callActivity3()
+        }
+    }
     private fun callActivity() {
         startActivity(Intent(this,ToolActivity::class.java))
     }
     private fun callActivity2() {
         startActivity(Intent(this,CultureActivity::class.java))
+    }
+
+    private fun callActivity3() {
+        startActivity(Intent(this,MainActivity::class.java))
     }
 
 
